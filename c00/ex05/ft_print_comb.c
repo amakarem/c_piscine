@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:36:33 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/11 23:43:02 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/11 23:49:34 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,4 @@ void	ft_print_comb(void)
 		}
 		b = ++a;
 	}
-}
-
-int	main(void)
-{
-	ft_print_comb();
 }

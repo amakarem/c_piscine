@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:42:26 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/11 19:05:23 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/12 21:10:36 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_is_negative(int n)
 	char	c;
 
 	c = 'N';
-	if ((n) >= 0 || n == NULL )
+	if ((n) >= 0)
 	{
 		c = 'P';
 	}

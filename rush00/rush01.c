@@ -12,36 +12,7 @@
 
 void	ft_putchar(char c);
 
-void	rush(int x, int y)
-{
-	int	v;
-	int	h;
-
-	v = 1;
-	while (v <= y)
-	{
-		h = 1;
-		while (h <= x)
-		{
-			if (h == 1)
-			{
-				first_char(x, y, h, v);
-			}
-			else if (h == x)
-			{
-				last_char(x, y, h, v);
-			}
-			else
-			{
-				mid_char(x, y, h, v);
-			}
-			h++;
-		}
-		v++;
-	}
-}
-
-void	first_char(int x, int y, int h, int v)
+void	first_char(int y, int v)
 {
 	if (v == 1)
 	{
@@ -57,7 +28,7 @@ void	first_char(int x, int y, int h, int v)
 	}
 }
 
-void	mid_char(int x, int y, int h, int v)
+void	mid_char(int y, int v)
 {
 	if (v != y && v != 1)
 	{
@@ -69,7 +40,7 @@ void	mid_char(int x, int y, int h, int v)
 	}
 }
 
-void	last_char(int x, int y, int h, int v)
+void	last_char(int y, int v)
 {
 	if (v == 1)
 	{
@@ -84,4 +55,33 @@ void	last_char(int x, int y, int h, int v)
 		ft_putchar('*');
 	}
 	ft_putchar('\n');
+}
+
+void	rush(int x, int y)
+{
+	int	v;
+	int	h;
+
+	v = 1;
+	while (v <= y)
+	{
+		h = 1;
+		while (h <= x)
+		{
+			if (h == 1)
+			{
+				first_char(y, v);
+			}
+			else if (h == x)
+			{
+				last_char(y, v);
+			}
+			else
+			{
+				mid_char(y, v);
+			}
+			h++;
+		}
+		v++;
+	}
 }

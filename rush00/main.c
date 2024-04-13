@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 19:42:08 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/13 13:59:07 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/13 19:49:14 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@ void	rush(int x, int y);
 // call the function
 int	main(void)
 {
-	rush(4, 4);
+	rush(5, 3);
 	return (0);
 }

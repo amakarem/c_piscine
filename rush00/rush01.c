@@ -10,15 +10,20 @@
 /*																			*/
 /* ************************************************************************** */
 
+/* x = number of characters in line */
+/* y = number of lines */
+/* line_n = current line number */
+/* char_n = current character */
+
 void	ft_putchar(char c);
 
-void	first_char(int y, int v)
+void	first_char(int x, int y, int line_n)
 {
-	if (v == 1)
+	if (line_n == 1)
 	{
 		ft_putchar('/');
 	}
-	else if (v == y)
+	else if (line_n == y)
 	{
 		ft_putchar('\\');
 	}
@@ -26,11 +31,15 @@ void	first_char(int y, int v)
 	{
 		ft_putchar('*');
 	}
+	if (x == 1)
+	{
+		ft_putchar('\n');
+	}
 }
 
-void	mid_char(int y, int v)
+void	mid_char(int y, int line_n)
 {
-	if (v != y && v != 1)
+	if (line_n != y && line_n != 1)
 	{
 		ft_putchar(' ');
 	}
@@ -40,13 +49,13 @@ void	mid_char(int y, int v)
 	}
 }
 
-void	last_char(int y, int v)
+void	last_char(int y, int line_n)
 {
-	if (v == 1)
+	if (line_n == 1)
 	{
 		ft_putchar('\\');
 	}
-	else if (v == y)
+	else if (line_n == y)
 	{
 		ft_putchar('/');
 	}
@@ -59,29 +68,29 @@ void	last_char(int y, int v)
 
 void	rush(int x, int y)
 {
-	int	v;
-	int	h;
+	int	line_n;
+	int	char_n;
 
-	v = 1;
-	while (v <= y)
+	line_n = 1;
+	while (line_n <= y)
 	{
-		h = 1;
-		while (h <= x)
+		char_n = 1;
+		while (char_n <= x)
 		{
-			if (h == 1)
+			if (char_n == 1)
 			{
-				first_char(y, v);
+				first_char(x, y, line_n);
 			}
-			else if (h == x)
+			else if (char_n == x)
 			{
-				last_char(y, v);
+				last_char(y, line_n);
 			}
 			else
 			{
-				mid_char(y, v);
+				mid_char(y, line_n);
 			}
-			h++;
+			char_n++;
 		}
-		v++;
+		line_n++;
 	}
 }

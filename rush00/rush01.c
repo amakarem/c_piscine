@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 22:30:52 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/13 13:59:26 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/13 14:00:46 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@ void	ft_putchar(char c);
 
 void	rush(int x, int y)
 {
-    int v;
-    int h;
+    int	v;
+    int	h;
 
     v=1;
     while (v <= y)

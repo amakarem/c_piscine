@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 23:42:17 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/14 00:03:20 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/14 00:06:10 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ft(int *********nbr)
+void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;
 }
@@ -40,7 +40,7 @@ int	main(void)
 	pointer_7 = &pointer_6;
 	pointer_8 = &pointer_7;
 	pointer_9 = &pointer_8;
-	ft_ft(pointer_9);
+	ft_ultimate_ft(pointer_9);
 	printf("%d", n);
 
 }

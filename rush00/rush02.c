@@ -6,29 +6,31 @@
 /*   By: etina <etina@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 21:26:07 by etina             #+#    #+#             */
-/*   Updated: 2024/04/13 22:04:25 by etina            ###   ########.fr       */
+/*   Updated: 2024/04/13 22:07:31 by etina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c);
+void	ft_putchar(char c);
 
-void beg_end(int y, int line_n)
+void	beg_end(int y, int line_n)
 {
 	if (line_n == 1)
 	{
 		ft_putchar('A');
-	} 
+	}
 	else if (line_n == y)
 	{
 		ft_putchar('C');
-	} else {
+	}
+	else
+	{
 		ft_putchar('B');
 	}
 }
 
-void middle(int x, int line_n)
+void	middle(int x, int line_n)
 {
 	if (line_n == 1 || line_n == x)
 	{

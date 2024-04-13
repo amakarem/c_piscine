@@ -6,13 +6,13 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 22:30:52 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/12 23:04:52 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/13 13:59:26 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_putchar.c"
+void	ft_putchar(char c);
 
-void rush(int x, int y)
+void	rush(int x, int y)
 {
     int v;
     int h;

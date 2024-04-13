@@ -6,11 +6,11 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 19:42:08 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/12 23:18:09 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/13 13:59:07 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush01.c"
+void	rush(int x, int y);
 
 // call the function
 int	main(void)

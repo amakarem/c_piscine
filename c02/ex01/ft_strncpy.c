@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 22:06:18 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/15 22:51:18 by aelaaser         ###   ########.fr       */
+/*   Created: 2024/04/15 22:36:25 by aelaaser          #+#    #+#             */
+/*   Updated: 2024/04/15 22:51:29 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	int	i;
 
 	i = 0;
-	while (src[i])
+	while (src[i] && i < n)
 	{
 		dest[i] = src[i];
 		i++;
@@ -26,10 +26,11 @@ char	*ft_strcpy(char *dest, char *src)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	char	dest[] = "xxxxxxxxxxx";
 // 	char	src[] = "Hello World";
+// 	char	dest[] = "xxxxx";
 
-// 	printf("%s\n", dest);
-// 	ft_strcpy(dest, src);
+// 	printf("%s\n \n", src);
+// 	printf("%s\n \n", dest);
+// 	ft_strncpy(dest, src, 5);
 // 	printf("%s\n", dest);
 // }

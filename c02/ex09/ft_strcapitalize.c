@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:51:03 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/17 00:24:33 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/17 00:35:27 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,24 @@ int	ft_strlen(char *str)
 char	*ft_strcapitalize(char *str)
 {
 	int	i;
-	int	size;
 	int	starting;
-	int org_char;
+	int	c;
 
 	starting = 1;
-	size = ft_strlen(str);
 	i = 0;
-	while (i <= size)
+	while (i <= ft_strlen(str))
 	{
-		org_char = str[i];		
-		if(starting == 1 && str[i] >= 97 && str[i] <= 122)
-		{
+		c = str[i];
+		if (starting == 1 && str[i] >= 97 && str[i] <= 122)
 			str[i] = str[i] - 32;
-		} else if (starting == 0 && str[i] >= 65 && str[i] <= 90)
-		{
+		else if (starting == 0 && str[i] >= 65 && str[i] <= 90)
 			str[i] = str[i] + 32;
-		}
-		
-		if (org_char < '0' || (org_char > '9' && org_char < 65) || (org_char > 90 && org_char < 97) || org_char > 122)
+		if (c < '0' || (c > '9' && c < 65) || (c > 90 && c < 97) || c > 122)
 		{
 			starting = 1;
-		} else {
+		}
+		else
+		{
 			starting = 0;
 		}
 		i++;
@@ -54,11 +50,11 @@ char	*ft_strcapitalize(char *str)
 	return (str);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char alpha[] = "salut, comment tu vas ? 42mots quarte-dex; ciuante+et+un";
+// int	main(void)
+// {
+// 	char alpha[] = "salut, comment tu vas ? 42mots quarte-dex; ciuante+et+un";
 
-	printf("%s\n", ft_strcapitalize(alpha));
-}
+// 	printf("%s\n", ft_strcapitalize(alpha));
+// }

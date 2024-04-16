@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:51:03 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/16 18:10:02 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/16 23:07:06 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,9 @@ char	*ft_strcapitalize(char *str)
 		else if (str[i] >= 65 && str[i] <= 90)
 		{
 			str[i] = str[i] + 32;
+			starting = 0;
 		}
-		else
+		else if((str[i] >= 122 || str[i] <= 97) && starting == 0)
 		{
 			starting = 1;
 		}
@@ -51,11 +52,11 @@ char	*ft_strcapitalize(char *str)
 	return (str);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int	main(void)
-// {
-// 	char alpha[] = "salut, comment tu vas ? 42mots quarte-dex; ciuante+et+un";
+int	main(void)
+{
+	char alpha[] = "asdas sdfsfd dfgfgf rtrdfgfgdf dfdf";
 
-// 	printf("%s\n", ft_strcapitalize(alpha));
-// }
+	printf("%s\n", ft_strcapitalize(alpha));
+}

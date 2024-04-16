@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:50:32 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/16 20:07:06 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/16 23:28:04 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlen(char *str)
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (src[i] != '\0' && i < size)
@@ -42,6 +42,8 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 // 	char	src[] = "Hello World";
 // 	char	dest[] = "xxxxx";
 
-// 	printf("%d\n \n", ft_strlcpy(dest, src, 11));
-// 	printf("%d\n", ft_strlcpy(dest, src, 5));
+// 	printf("%d\n \n", ft_strlcpy(dest, src, 5));
+// 	printf("%s\n \n", dest);
+// 	printf("%d\n", ft_strlcpy(dest, src, 11));
+// 	printf("%s\n \n", dest);
 // }

@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:12:22 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/16 16:46:45 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:50:10 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int	ft_str_is_numeric(char *str)
 // int	main(void)
 // {
 // 	char	empty[] = "";
-// 	char	alpha[] = "102123555s325";
-// 	char	notlpha[] = "12354566875";
+// 	char	alpha[] = "102123555325";
+// 	char	notlpha[] = "12354566875x";
 // 	int	out;
 
 // 	out = ft_str_is_numeric(empty);

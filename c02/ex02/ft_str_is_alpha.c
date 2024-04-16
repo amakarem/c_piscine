@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 15:12:27 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/16 16:10:59 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:46:51 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_str_is_alpha(char *str)
 
 	size = ft_strlen(str);
 	i = 0;
-	while (i < size)
+	while (i <= size)
 	{
 		if ((str[i] > 'z' || str[i] < 'a') && (str[i] > 'Z' || str[i] < 'A'))
 		{

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 16:12:22 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/16 16:46:45 by aelaaser         ###   ########.fr       */
+/*   Created: 2024/04/16 16:43:52 by aelaaser          #+#    #+#             */
+/*   Updated: 2024/04/16 16:47:34 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_strlen(char *str)
 	return (len - 1);
 }
 
-int	ft_str_is_numeric(char *str)
+int	ft_str_is_lowercase(char *str)
 {
 	int	i;
 	int	size;
@@ -31,7 +31,7 @@ int	ft_str_is_numeric(char *str)
 	i = 0;
 	while (i <= size)
 	{
-		if ((str[i] > '9' || str[i] < '0'))
+		if ((str[i] > 'z' || str[i] < 'a'))
 		{
 			return (0);
 		}
@@ -44,14 +44,14 @@ int	ft_str_is_numeric(char *str)
 // int	main(void)
 // {
 // 	char	empty[] = "";
-// 	char	alpha[] = "102123555s325";
-// 	char	notlpha[] = "12354566875";
+// 	char	alpha[] = "abcdefghhffb";
+// 	char	notlpha[] = "abcXefgHhffB";
 // 	int	out;
 
-// 	out = ft_str_is_numeric(empty);
+// 	out = ft_str_is_lowercase(empty);
 // 	printf("%d\n", out);
-// 	out = ft_str_is_numeric(alpha);
+// 	out = ft_str_is_lowercase(alpha);
 // 	printf("%d\n", out);
-// 	out = ft_str_is_numeric(notlpha);
+// 	out = ft_str_is_lowercase(notlpha);
 // 	printf("%d\n", out);
 // }

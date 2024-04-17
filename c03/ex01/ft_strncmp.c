@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 17:58:16 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/17 18:12:55 by aelaaser         ###   ########.fr       */
+/*   Created: 2024/04/17 18:14:00 by aelaaser          #+#    #+#             */
+/*   Updated: 2024/04/17 18:18:14 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0')
+	while (s1[i] == s2[i] && s1[i] != '\0' && i < (n - 1))
 	{
 		i++;
 	}
@@ -31,5 +31,6 @@ int	ft_strcmp(char *s1, char *s2)
 // 	char* s1 = "abcdeFg";
 // 	char* s2 = "abcdefg";
 
-// 	printf("%d\n", ft_strcmp(s1, s2));
+// 	printf("%d\n", ft_strncmp(s1, s2, 5));
+// 	printf("%d\n", ft_strncmp(s1, s2, 7));
 // }

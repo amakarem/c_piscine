@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 19:13:55 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/18 20:46:39 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/18 20:49:56 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strstr(char *str, char *to_find)
 // int main(void)
 // {
 //     char s1[] = "asdsddsd hmed for 42 test sadsdasdad";
-//     char s2[] = "ahmed for 42 test";
+//     char s2[] = "hmed for 42 test asdsdas";
 //     char* p;
 
 // 	p = strstr(s1, s2);

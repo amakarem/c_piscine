@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:38:44 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/18 16:24:49 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:46:10 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	{
 		total_size = total_size - 1;
 	}
+	if (total_size > (dest_size + src_size))
+	{
+		total_size = (dest_size + src_size);
+	}
 	return (total_size);
 }
 
@@ -42,10 +46,10 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 // #include <string.h>
 // int main(void)
 // {
-// 	char dest[] = "Welcome";
+// 	char dest[] = "Welcomex";
 // 	char src[] = "Home";
-// 	printf("%d\n", ft_strlcat(dest, src, 5));
-// 	printf("%lu\n", strlcat(dest, src, 5));
+// 	printf("%d\n", ft_strlcat(dest, src, 15));
+// 	printf("%lu\n", strlcat(dest, src, 0));
 // 	printf("%s\n", dest);
 // 	printf("%s\n", src);
 // }

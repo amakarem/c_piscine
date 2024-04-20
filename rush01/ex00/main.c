@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 01:12:57 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 01:44:35 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,21 @@ void	ft_solve_col_4(void)
 	}
 }
 
+void	ft_solve_col_4_ex1(void)
+{
+	int	col;
+
+	col = 0;
+	while (col < 4)
+	{
+		if (g_matrix[0][col] == 1 && g_matrix[1][col] == 3)
+			g_output[1][col] = 3;
+		else if (g_matrix[1][col] == 1 && g_matrix[0][col] == 3)
+			g_output[2][col] = 3;
+		col++;
+	}
+}
+
 void	ft_solve_col_next(void)
 {
 	int	col;
@@ -121,7 +136,7 @@ void	ft_col_find_4(void)
 			}
 
 		}
-		if (g_matrix[0][i] >= g_matrix[1][i] && g_output[0][i] == 0)
+		else if (g_matrix[0][i] >= g_matrix[1][i] && g_output[0][i] == 0)
 		{
 			g_output[3][i] = 4 - g_matrix[1][i] + 1;
 			x = 2;
@@ -150,7 +165,7 @@ void	ft_solve_row_next(void)
 			if (g_output[row][col] != 0 && g_output[row][col] <= 4)
 			{
 				if (g_output[row + 1][col] == 0)
-				g_output[row + 1][col] = g_output[row][col] + 1;
+					g_output[row + 1][col] = g_output[row][col] + 1;
 				if (g_output[row + 1][col] == 5)
 				{
 					g_output[row + 1][col] = 1;
@@ -191,6 +206,21 @@ void	ft_solve_row_4(void)
 	}
 }
 
+void	ft_solve_row_4_ext1(void)
+{
+	int	row;
+
+	row = 0;
+	while (row < 4)
+	{
+		if (g_matrix[2][row] == 1 && g_matrix[3][row] == 3)
+			g_output[row][1] = 3;
+		if (g_matrix[3][row] == 1 && g_matrix[2][row] == 3)
+			g_output[row][2] = 3;
+		row++;
+	}
+}
+
 int	main(int argc, char	**argv)
 {
 	if (argc != 2)
@@ -204,7 +234,9 @@ int	main(int argc, char	**argv)
 		return (1);
 	}
 	ft_solve_col_4();
+	ft_solve_col_4_ex1();
 	ft_solve_row_4();
+	ft_solve_row_4_ext1();
 	ft_solve_col_next();
 	ft_solve_row_next();
 	ft_col_find_4();

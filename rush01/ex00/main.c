@@ -6,41 +6,17 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/20 22:24:47 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/20 23:22:55 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	g_matrix[4][4];
 int	g_output[4][4];
 
+int	ft_validate(int validate_input, int arr[4][4]);
+
 void	ft_print_output(int arr[4][4]);
 void	ft_printf(char *str);
-
-int	ft_validate(int validate_input)
-{
-	int	col;
-	int	sumval;
-
-	col = 0;
-	sumval = 0;
-	while (col < 4)
-	{
-		sumval = g_matrix[0][col] + g_matrix[1][col];
-		if (sumval > 5 || sumval < 3)
-		{
-			return (sumval);
-		}
-		sumval = g_matrix[2][col] + g_matrix[3][col];
-		if (sumval > 5 || sumval < 3)
-		{
-			return (sumval);
-		}
-		col++;
-	}
-	return (validate_input);
-}
 
 int	ft_format(char *str)
 {
@@ -71,6 +47,81 @@ int	ft_format(char *str)
 	return (validate_input);
 }
 
+void	ft_solve_col_4(void)
+{
+	int	col;
+
+	col = 0;
+	while (col < 4)
+	{
+		if (g_matrix[0][col] == 4)
+		{
+			g_output[0][col] = 1;
+			g_output[1][col] = 2;
+			g_output[2][col] = 3;
+			g_output[3][col] = 4;
+		}
+		else if (g_matrix[1][col] == 4)
+		{
+			g_output[3][col] = 1;
+			g_output[2][col] = 2;
+			g_output[1][col] = 3;
+			g_output[0][col] = 4;
+		}
+		col++;
+	}
+}
+
+void	ft_solve_col_next(void)
+{
+	int	col;
+	int	row;
+
+	col = 0;
+	while (col < 4)
+	{
+		row = 0;
+		while (row < 4)
+		{
+			if (g_output[row][col] != 0 && g_output[row][col] <= 4)
+			{
+				g_output[row + 1][col] = g_output[row][col] + 1;
+				if (g_output[row + 1][col] == 5)
+				{
+					g_output[row + 1][col] = 1;
+				}
+			}
+			row++;
+		}
+		col++;
+	}
+}
+
+void	ft_solve_row_4(void)
+{
+	int	col;
+
+	col = 0;
+	while (col < 4)
+	{
+		if (g_matrix[2][col] == 4)
+		{
+			g_output[col][0] = 1;
+			g_output[col][1] = 2;
+			g_output[col][2] = 3;
+			g_output[col][3] = 4;
+		}
+		else if (g_matrix[3][col] == 4)
+		{
+			g_output[col][3] = 1;
+			g_output[col][2] = 2;
+			g_output[col][1] = 3;
+			g_output[col][0] = 4;
+		}
+		col++;
+	}
+}
+
 int	main(int argc, char	**argv)
 {
 	if (argc != 2)
@@ -78,11 +129,14 @@ int	main(int argc, char	**argv)
 		ft_printf("ERROR\n");
 		return (1);
 	}
-	else if (ft_validate(ft_format(argv[1])) != 16)
+	else if (ft_validate(ft_format(argv[1]), g_matrix) != 16)
 	{
 		ft_printf("ERROR\n");
 		return (1);
 	}
-	ft_print_output(g_matrix);
+	ft_solve_col_4();
+	ft_solve_row_4();
+	ft_solve_col_next();
+	ft_print_output(g_output);
 	return (0);
 }

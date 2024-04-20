@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/20 23:22:55 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 00:35:36 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,10 @@ void	ft_solve_col_4(void)
 			g_output[2][col] = 3;
 			g_output[3][col] = 4;
 		}
+		else if (g_matrix[0][col] == 1)
+			g_output[0][col] = 4;
+		if (g_matrix[1][col] == 1)
+			g_output[3][col] = 4;
 		else if (g_matrix[1][col] == 4)
 		{
 			g_output[3][col] = 1;
@@ -99,26 +103,30 @@ void	ft_solve_col_next(void)
 
 void	ft_solve_row_4(void)
 {
-	int	col;
+	int	row;
 
-	col = 0;
-	while (col < 4)
+	row = 0;
+	while (row < 4)
 	{
-		if (g_matrix[2][col] == 4)
+		if (g_matrix[2][row] == 4)
 		{
-			g_output[col][0] = 1;
-			g_output[col][1] = 2;
-			g_output[col][2] = 3;
-			g_output[col][3] = 4;
+			g_output[row][0] = 1;
+			g_output[row][1] = 2;
+			g_output[row][2] = 3;
+			g_output[row][3] = 4;
 		}
-		else if (g_matrix[3][col] == 4)
+		else if (g_matrix[2][row] == 1)
+			g_output[row][0] = 4;
+		if (g_matrix[3][row] == 1)
+			g_output[row][3] = 4;
+		else if (g_matrix[3][row] == 4)
 		{
-			g_output[col][3] = 1;
-			g_output[col][2] = 2;
-			g_output[col][1] = 3;
-			g_output[col][0] = 4;
+			g_output[row][3] = 1;
+			g_output[row][2] = 2;
+			g_output[row][1] = 3;
+			g_output[row][0] = 4;
 		}
-		col++;
+		row++;
 	}
 }
 

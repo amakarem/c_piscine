@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 01:01:02 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 01:12:57 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ void	ft_solve_col_next(void)
 		{
 			if (g_output[row][col] != 0 && g_output[row][col] <= 4)
 			{
-				g_output[row + 1][col] = g_output[row][col] + 1;
+				if (g_output[row + 1][col] == 0)
+					g_output[row + 1][col] = g_output[row][col] + 1;
 				if (g_output[row + 1][col] == 5)
 				{
 					g_output[row + 1][col] = 1;
@@ -107,7 +108,7 @@ void	ft_col_find_4(void)
 	int x;
 
 	i = 0;
-	while(i < 4)
+	while (i < 4)
 	{
 		if (g_matrix[0][i] <= g_matrix[1][i] && g_output[0][i] == 0)
 		{
@@ -134,6 +135,7 @@ void	ft_col_find_4(void)
 		i++;
 	}
 }
+
 void	ft_solve_row_next(void)
 {
 	int	col;
@@ -147,6 +149,7 @@ void	ft_solve_row_next(void)
 		{
 			if (g_output[row][col] != 0 && g_output[row][col] <= 4)
 			{
+				if (g_output[row + 1][col] == 0)
 				g_output[row + 1][col] = g_output[row][col] + 1;
 				if (g_output[row + 1][col] == 5)
 				{

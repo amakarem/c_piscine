@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 18:14:00 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 06:14:01 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 06:16:18 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
 
-	if (n == 0) {
+	if (n == 0)
+	{
 		return (0);
 	}
 	i = 0;

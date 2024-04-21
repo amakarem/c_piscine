@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 02:26:05 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 02:28:42 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@ int	g_matrix[4][4];
 int	g_output[4][4];
 
 int	ft_validate(int validate_input, int arr[4][4]);
-
-void	ft_print_output(int arr[4][4]);
-void	ft_printf(char *str);
-
 int	ft_format(char *str, int g_matrix[4][4]);
+int	ft_print_output(int arr[4][4]);
+int	ft_printf(char *str);
 
 void	ft_solve_col_4(void)
 {

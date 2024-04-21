@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:13:07 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/20 22:14:45 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 02:29:21 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_printf(char *str)
+int	ft_printf(char *str)
 {
 	int	i;
 
@@ -27,4 +27,5 @@ void	ft_printf(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 03:21:13 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 03:36:36 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,12 +116,12 @@ int	main(int argc, char	**argv)
 		return (1);
 	}
 	ft_solve_col_4();
-	ft_solve_col_4_ext1(g_in, g_out);
 	ft_solve_row_4();
+	ft_col_find_4();
+	ft_solve_col_4_ext1(g_in, g_out);
 	ft_solve_row_4_ext1(g_in, g_out);
 	ft_solve_col_next(g_out);
 	ft_solve_row_next(g_out);
-	ft_col_find_4();
 	ft_print_output(g_out);
 	return (0);
 }

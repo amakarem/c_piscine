@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 02:42:09 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 03:08:39 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ int	ft_validate(int validate_input, int arr[4][4]);
 int	ft_format(char *str, int g_in[4][4]);
 int	ft_print_output(int arr[4][4]);
 int	ft_printf(char *str);
+int	ft_solve_col_4_ext1(int g_in[4][4], int g_out[4][4]);
+int	ft_solve_row_4_ext1(int g_in[4][4], int g_out[4][4]);
+int	ft_solve_col_next(int g_out[4][4]);
+int	ft_solve_row_next(int g_out[4][4]);
 
 void	ft_solve_col_4(void)
 {
@@ -42,47 +46,6 @@ void	ft_solve_col_4(void)
 			g_out[2][col] = 2;
 			g_out[1][col] = 3;
 			g_out[0][col] = 4;
-		}
-		col++;
-	}
-}
-
-void	ft_solve_col_4_ex1(void)
-{
-	int	col;
-
-	col = 0;
-	while (col < 4)
-	{
-		if (g_in[0][col] == 1 && g_in[1][col] == 3)
-			g_out[1][col] = 3;
-		else if (g_in[1][col] == 1 && g_in[0][col] == 3)
-			g_out[2][col] = 3;
-		col++;
-	}
-}
-
-void	ft_solve_col_next(void)
-{
-	int	col;
-	int	row;
-
-	col = 0;
-	while (col < 4)
-	{
-		row = 0;
-		while (row < 4)
-		{
-			if (g_out[row][col] != 0 && g_out[row][col] <= 4)
-			{
-				if (g_out[row + 1][col] == 0)
-					g_out[row + 1][col] = g_out[row][col] + 1;
-				if (g_out[row + 1][col] == 5)
-				{
-					g_out[row + 1][col] = 1;
-				}
-			}
-			row++;
 		}
 		col++;
 	}
@@ -120,32 +83,6 @@ void	ft_col_find_4(void)
 	}
 }
 
-void	ft_solve_row_next(void)
-{
-	int	col;
-	int	row;
-
-	row = 0;
-	while (row < 4)
-	{
-		col = 0;
-		while (col < 4)
-		{
-			if (g_out[row][col] != 0 && g_out[row][col] <= 4)
-			{
-				if (g_out[row + 1][col] == 0)
-					g_out[row + 1][col] = g_out[row][col] + 1;
-				if (g_out[row + 1][col] == 5)
-				{
-					g_out[row + 1][col] = 1;
-				}
-			}
-			col++;
-		}
-		row++;
-	}
-}
-
 void	ft_solve_row_4(void)
 {
 	int	row;
@@ -175,33 +112,6 @@ void	ft_solve_row_4(void)
 	}
 }
 
-void	ft_solve_row_4_ext1(void)
-{
-	int	row;
-
-	row = 0;
-	while (row < 4)
-	{
-		if (g_in[2][row] == 1 && g_in[3][row] == 3)
-			g_out[row][1] = 3;
-		if (g_in[3][row] == 1 && g_in[2][row] == 3)
-			g_out[row][2] = 3;
-		if (g_in[2][row] == 1 && g_in[3][row] == 2 && g_out[row][1] == 0)
-		{
-			g_out[row][1] = 1;
-			if (g_out[row][2] == 0)
-				g_out[row][2] = 2;
-		}
-		if (g_in[3][row] == 1 && g_in[2][row] == 2 && g_out[row][1] == 0)
-		{
-			g_out[row][1] = 2;
-			if (g_out[row][2] == 0)
-				g_out[row][2] = 1;
-		}
-		row++;
-	}
-}
-
 int	main(int argc, char	**argv)
 {
 	if (argc != 2)
@@ -215,11 +125,11 @@ int	main(int argc, char	**argv)
 		return (1);
 	}
 	ft_solve_col_4();
-	ft_solve_col_4_ex1();
+	ft_solve_col_4_ext1(g_in, g_out);
 	ft_solve_row_4();
-	ft_solve_row_4_ext1();
-	ft_solve_col_next();
-	ft_solve_row_next();
+	ft_solve_row_4_ext1(g_in, g_out);
+	ft_solve_col_next(g_out);
+	ft_solve_row_next(g_out);
 	ft_col_find_4();
 	ft_print_output(g_out);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 01:44:35 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 02:04:46 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,6 +217,23 @@ void	ft_solve_row_4_ext1(void)
 			g_output[row][1] = 3;
 		if (g_matrix[3][row] == 1 && g_matrix[2][row] == 3)
 			g_output[row][2] = 3;
+
+		if (g_matrix[2][row] == 1 && g_matrix[3][row] == 2)
+		{
+			if (g_output[row][1] == 0 && g_output[row][2] == 0)
+			{
+				g_output[row][1] = 1;
+				g_output[row][2] = 2;
+			}
+		}
+		if (g_matrix[3][row] == 1 && g_matrix[2][row] == 2)
+		{
+			if (g_output[row][1] == 0 && g_output[row][2] == 0)
+			{
+				g_output[row][2] = 1;
+				g_output[row][1] = 2;
+			}
+		}
 		row++;
 	}
 }

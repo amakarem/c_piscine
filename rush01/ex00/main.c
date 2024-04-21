@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 02:23:47 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 02:26:05 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	ft_solve_col_next(void)
 void	ft_col_find_4(void)
 {
 	int	i;
-	int x;
+	int	x;
 
 	i = 0;
 	while (i < 4)
@@ -107,7 +107,6 @@ void	ft_col_find_4(void)
 				g_output[x][i] = g_output[x + 1][i] + 1;
 				x++;
 			}
-
 		}
 		else if (g_matrix[0][i] >= g_matrix[1][i] && g_output[0][i] == 0)
 		{
@@ -118,7 +117,6 @@ void	ft_col_find_4(void)
 				g_output[x][i] = g_output[x + 1][i] + 1;
 				x--;
 			}
-
 		}
 		i++;
 	}
@@ -190,7 +188,6 @@ void	ft_solve_row_4_ext1(void)
 			g_output[row][1] = 3;
 		if (g_matrix[3][row] == 1 && g_matrix[2][row] == 3)
 			g_output[row][2] = 3;
-
 		if (g_matrix[2][row] == 1 && g_matrix[3][row] == 2)
 		{
 			if (g_output[row][1] == 0 && g_output[row][2] == 0)

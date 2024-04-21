@@ -6,12 +6,10 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:14:16 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/20 22:21:44 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 02:26:30 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//int	g_matrix[4][4];
-//int	g_output[4][4];
 void	ft_putchar(char c);
 
 void	ft_print_output(int arr[4][4])

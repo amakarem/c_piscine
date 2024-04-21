@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 03:04:29 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 04:53:00 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 05:02:17 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int	ft_solve_col_next(int g_out[4][4])
 			{
 				if (g_out[row + 1][col] == 0)
 				{
-					update_val(row + 1,col, g_out[row][col] + 1);
+					update_val(row + 1, col, g_out[row][col] + 1);
 				}
 				if (g_out[row + 1][col] == 5)
 				{
-					update_val(row + 1,col, 1);
+					update_val(row + 1, col, 1);
 				}
 			}
 			row++;

@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 04:58:34 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 05:43:52 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	ft_solve_row_next(int g_out[4][4]);
 int	ft_col_find_4(int g_in[4][4], int g_out[4][4]);
 int	validate_pos(int row, int col, int n);
 int	update_val(int row, int col, int n);
+int	force_it(void);
 
 void	ft_solve_col_4(void)
 {
@@ -88,6 +89,7 @@ int	update_val(int row, int col, int n)
 	if (validate_pos(row, col, n) != 0)
 	{
 		g_out[row][col] = n;
+		return (1);
 	}
 	return (0);
 }
@@ -125,6 +127,7 @@ int	main(int argc, char	**argv)
 	ft_solve_row_4_ext1(g_in);
 	ft_solve_col_next(g_out);
 	ft_solve_row_next(g_out);
+	force_it();
 	ft_print_output(g_out);
 	return (0);
 }

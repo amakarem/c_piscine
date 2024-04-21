@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 19:13:55 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/18 20:49:56 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 06:19:35 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strstr(char *str, char *to_find)
 	int	x;
 
 	i = 0;
-	if (to_find[x] == '\0')
+	if (to_find[0] == '\0')
 	{
 		return (str);
 	}

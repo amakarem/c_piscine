@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 02:04:46 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 02:23:47 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,34 +18,7 @@ int	ft_validate(int validate_input, int arr[4][4]);
 void	ft_print_output(int arr[4][4]);
 void	ft_printf(char *str);
 
-int	ft_format(char *str)
-{
-	int	col;
-	int	row;
-	int	i;
-	int	validate_input;
-
-	validate_input = 0;
-	col = 0;
-	row = 0;
-	i = 0;
-	while (str[i] && str[i] != '\0' && row < 4)
-	{
-		if (str[i] >= '0' && str[i] <= '9' && col < 4)
-		{
-			g_matrix[row][col] = (int)(str[i] - 48);
-			validate_input++;
-			col++;
-			if (col == 4)
-			{
-				row++;
-				col = 0;
-			}
-		}
-		i++;
-	}
-	return (validate_input);
-}
+int	ft_format(char *str, int g_matrix[4][4]);
 
 void	ft_solve_col_4(void)
 {
@@ -245,7 +218,7 @@ int	main(int argc, char	**argv)
 		ft_printf("ERROR\n");
 		return (1);
 	}
-	else if (ft_validate(ft_format(argv[1]), g_matrix) != 16)
+	else if (ft_validate(ft_format(argv[1], g_matrix), g_matrix) != 16)
 	{
 		ft_printf("ERROR\n");
 		return (1);

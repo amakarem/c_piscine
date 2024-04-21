@@ -6,11 +6,11 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 03:04:29 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 04:49:27 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 04:53:00 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	update_val(int row, int col,int n);
+int	update_val(int row, int col, int n);
 
 int	ft_solve_col_next(int g_out[4][4])
 {

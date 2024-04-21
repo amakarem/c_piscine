@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 04:51:18 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 04:58:34 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ int	ft_solve_col_4_ext1(int g_in[4][4]);
 int	ft_solve_row_4_ext1(int g_in[4][4]);
 int	ft_solve_col_next(int g_out[4][4]);
 int	ft_solve_row_next(int g_out[4][4]);
-int	ft_col_find_4_ext1(int i, int g_out[4][4]);
-int	ft_col_find_4_ext2(int i, int g_out[4][4]);
-int	validate_pos(int row, int col,int n);
-int	update_val(int row, int col,int n);
+int	ft_col_find_4(int g_in[4][4], int g_out[4][4]);
+int	validate_pos(int row, int col, int n);
+int	update_val(int row, int col, int n);
 
 void	ft_solve_col_4(void)
 {
@@ -52,29 +51,6 @@ void	ft_solve_col_4(void)
 			g_out[0][col] = 4;
 		}
 		col++;
-	}
-}
-
-void	ft_col_find_4(void)
-{
-	int	i;
-
-	i = 0;
-	while (i < 4)
-	{
-		if (g_in[0][i] <= g_in[1][i] && g_out[0][i] == 0)
-		{
-			if (validate_pos(0, i, g_out[0][i] + 1) != 0)
-				g_out[0][i] = 4 - g_in[0][i] + 1;
-			ft_col_find_4_ext1(i, g_out);
-		}
-		else if (g_in[0][i] >= g_in[1][i] && g_out[0][i] == 0)
-		{
-			if (validate_pos(3, i, g_out[3][i] + 1) != 0)
-				g_out[3][i] = 4 - g_in[1][i] + 1;
-			ft_col_find_4_ext2(i, g_out);
-		}
-		i++;
 	}
 }
 
@@ -106,15 +82,17 @@ void	ft_solve_row_4(void)
 		row++;
 	}
 }
-int update_val(int row, int col, int n)
+
+int	update_val(int row, int col, int n)
 {
-	if (validate_pos(row, col, n) != 0) {
+	if (validate_pos(row, col, n) != 0)
+	{
 		g_out[row][col] = n;
 	}
 	return (0);
 }
 
-int	validate_pos(int row, int col,int n)
+int	validate_pos(int row, int col, int n)
 {
 	int	i;
 
@@ -142,7 +120,7 @@ int	main(int argc, char	**argv)
 	}
 	ft_solve_col_4();
 	ft_solve_row_4();
-	ft_col_find_4();
+	ft_col_find_4(g_in, g_out);
 	ft_solve_col_4_ext1(g_in);
 	ft_solve_row_4_ext1(g_in);
 	ft_solve_col_next(g_out);

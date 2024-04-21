@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 03:08:39 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 03:21:13 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_solve_col_4_ext1(int g_in[4][4], int g_out[4][4]);
 int	ft_solve_row_4_ext1(int g_in[4][4], int g_out[4][4]);
 int	ft_solve_col_next(int g_out[4][4]);
 int	ft_solve_row_next(int g_out[4][4]);
+int	ft_col_find_4_ext1(int i, int g_out[4][4]);
+int	ft_col_find_4_ext2(int i, int g_out[4][4]);
 
 void	ft_solve_col_4(void)
 {
@@ -54,7 +56,6 @@ void	ft_solve_col_4(void)
 void	ft_col_find_4(void)
 {
 	int	i;
-	int	x;
 
 	i = 0;
 	while (i < 4)
@@ -62,22 +63,12 @@ void	ft_col_find_4(void)
 		if (g_in[0][i] <= g_in[1][i] && g_out[0][i] == 0)
 		{
 			g_out[0][i] = 4 - g_in[0][i] + 1;
-			x = 1;
-			while (g_out[x][i] == 0 && x < 4 && g_out[x + 1][i] <= 3)
-			{
-				g_out[x][i] = g_out[x + 1][i] + 1;
-				x++;
-			}
+			ft_col_find_4_ext1(i, g_out);
 		}
 		else if (g_in[0][i] >= g_in[1][i] && g_out[0][i] == 0)
 		{
 			g_out[3][i] = 4 - g_in[1][i] + 1;
-			x = 2;
-			while (g_out[x][i] == 0 && x >= 0 && g_out[x + 1][i] <= 3)
-			{
-				g_out[x][i] = g_out[x + 1][i] + 1;
-				x--;
-			}
+			ft_col_find_4_ext2(i, g_out);
 		}
 		i++;
 	}

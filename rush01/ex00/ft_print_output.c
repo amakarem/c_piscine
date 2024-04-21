@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:14:16 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 03:11:06 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/21 08:01:38 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	ft_print_output(int arr[4][4])
 		{
 			x = arr[row][col] + '0';
 			ft_putchar(x);
-			ft_putchar(' ');
+			if (col < 3)
+				ft_putchar(' ');
 			col++;
 		}
 		ft_putchar('\n');

@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 21:07:56 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/23 00:29:59 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/23 00:32:28 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ int	ft_atoi(char *str)
 		}
 		else if (nb != 0 && (str[i] > '9' || str[i] < '0'))
 			return (nb * negative);
-		else if (str[i] != ' ' && str[i] != '+' && (str[i] > '9' || str[i] < '0'))
-			return (0);
+		else if (str[i] != ' ' && str[i] != '+')
+			if (str[i] > '9' || str[i] < '0')
+				return (0);
 		i++;
 	}
 	return (nb * negative);

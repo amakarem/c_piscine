@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:52:21 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/23 00:14:48 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/23 00:19:31 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	print_nbr(int nb)
 	char	str[12];
 	int		i;
 
+	i = 0;
 	while (nb != 0)
 	{
 		str[i] = (nb % 10) + 48;
@@ -65,5 +66,10 @@ void	ft_putnbr(int nb)
 // int	main(void)
 // {
 // 	ft_putnbr(2147483647);
+// 	write(1, "\n", 1);
+// 	ft_putnbr(42);
+// 	write(1, "\n", 1);
+// 	ft_putnbr(544558);
+// 	write(1, "\n", 1);
 // 	return (0);
 // }

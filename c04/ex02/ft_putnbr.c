@@ -6,79 +6,64 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:52:21 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/22 21:06:38 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/23 00:14:48 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_d(int i)
+int	ft_maxint(int nb)
 {
-	int	d;
-
-	d = 1;
-	while (i > 0)
+	if (nb == -2147483648)
 	{
-		d = d * 10;
-		i--;
+		write(1, "-", 1);
+		write(1, "2", 1);
+		nb = 147483648;
 	}
-	if (d > 1)
+	else if (nb == 2147483647)
 	{
-		d = d / 10;
+		write(1, "2", 1);
+		nb = 147483647;
 	}
-	return (d);
+	return (nb);
 }
 
-int	ft_nb_len(int nb)
+void	print_nbr(int nb)
 {
-	int	len;
-	int	i;
+	char	str[12];
+	int		i;
 
-	len = 0;
-	i = nb;
-	if (i < 0)
+	while (nb != 0)
 	{
-		i = i * -1;
+		str[i] = (nb % 10) + 48;
+		nb = (nb / 10);
+		i++;
 	}
-	while (i > 0)
+	str[i] = '\0';
+	i--;
+	while (i >= 0)
 	{
-		len++;
-		i = i / 10;
+		write(1, &str[i], 1);
+		i--;
 	}
-	return (len);
 }
 
 void	ft_putnbr(int nb)
 {
-	int		len;
-	int		i;
-	char	c;
-
-	len = ft_nb_len(nb);
+	nb = ft_maxint(nb);
 	if (nb < 0)
 	{
 		write(1, "-", 1);
-		nb = nb * -1;
+		print_nbr(nb * -1);
 	}
-	if (len == 0)
+	else if (nb == 0)
 		write(1, "0", 1);
 	else
-	{
-		i = nb;
-		while (len > 0)
-		{
-			c = (i / ft_d(len)) + 48;
-			write(1, &c, 1);
-			i = i - (ft_d(len) * (i / ft_d(len)));
-			len--;
-		}
-	}
+		print_nbr(nb);
 }
 
-// #include <stdio.h>
 // int	main(void)
 // {
-// 	//ft_putnbr(-4200);
-// 	ft_putnbr(42);
+// 	ft_putnbr(2147483647);
 // 	return (0);
 // }

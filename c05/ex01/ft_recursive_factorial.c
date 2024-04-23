@@ -6,11 +6,11 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:24:00 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/23 15:37:57 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:49:43 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_recursive_factorial(int nb)
+int	ft_recursive_factorial(int nb)
 {
 	if (nb < 0 || nb > 33)
 		return (0);

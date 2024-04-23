@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 15:09:33 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/23 15:49:30 by aelaaser         ###   ########.fr       */
+/*   Created: 2024/04/23 15:40:02 by aelaaser          #+#    #+#             */
+/*   Updated: 2024/04/23 15:49:06 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	ft_iterative_power(int nb, int power)
 {
 	int	result;
-	int	factorial;
 
 	result = 1;
-	factorial = 1;
-	if (nb < 0 || nb > 33)
+	if (nb + power == 0 || power < 0)
 		return (0);
-	else if (nb == 0)
-		nb = 1;
-	while (factorial <= nb)
+	while (power > 0)
 	{
-		result = result * factorial;
-		factorial++;
+		result = (result * nb);
+		power--;
 	}
 	return (result);
 }
 
 // #include <stdio.h>
-// int main(void)
+// int	main(void)
 // {
-// 	printf("%i\n", ft_iterative_factorial(50));
-// 	printf("%i\n", ft_iterative_factorial(1));
-// 	printf("%i\n", ft_iterative_factorial(-1));
-// 	printf("%i\n", ft_iterative_factorial(33));
+// 	printf("%i\n", ft_iterative_power(6, 3));
 // }

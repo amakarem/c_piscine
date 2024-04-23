@@ -6,13 +6,15 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:51:05 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/23 15:56:14 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/23 20:59:42 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_recursive_power(int nb, int power)
 {
-	if ((nb == 0 && power == 0) || power < 0)
+	if ((nb == 0 && power == 0))
+		return (1);
+	if (power < 0)
 		return (0);
 	if (power == 0)
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:40:02 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/23 15:56:21 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/23 20:58:51 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_iterative_power(int nb, int power)
 	int	result;
 
 	result = 1;
-	if ((nb == 0 && power == 0) || power < 0)
+	if (power < 0)
 		return (0);
 	while (power > 0)
 	{
@@ -28,5 +28,5 @@ int	ft_iterative_power(int nb, int power)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	printf("%i\n", ft_iterative_power(6, 3));
+// 	printf("%i\n", ft_iterative_power(0, 0));
 // }

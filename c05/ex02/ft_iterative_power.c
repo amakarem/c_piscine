@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:40:02 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/23 20:58:51 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:48:59 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,8 @@ int	ft_iterative_power(int nb, int power)
 // int	main(void)
 // {
 // 	printf("%i\n", ft_iterative_power(0, 0));
+// 	printf("%i\n", ft_iterative_power(6, 0));
+// 	printf("%i\n", ft_iterative_power(0, 6));
+// 	printf("%i\n", ft_iterative_power(6, 6));
+// 	printf("%i\n", ft_iterative_power(6, -6));
 // }

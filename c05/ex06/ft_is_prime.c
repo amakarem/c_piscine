@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:14:39 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/25 18:13:32 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:24:45 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ int	ft_is_prime(int nb)
 	return (1);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	printf("%i\n", ft_is_prime(9));
-	printf("%i\n", ft_is_prime(0));
-	printf("%i\n", ft_is_prime(2));
-	printf("%i\n", ft_is_prime(1));
-	printf("%i\n", ft_is_prime(2147483647));
-}
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	printf("%i\n", ft_is_prime(9));
+// 	printf("%i\n", ft_is_prime(0));
+// 	printf("%i\n", ft_is_prime(2));
+// 	printf("%i\n", ft_is_prime(1));
+// 	printf("%i\n", ft_is_prime(2147483647));
+// }

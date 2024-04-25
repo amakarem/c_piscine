@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:24:00 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/24 16:21:22 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:13:23 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_is_prime(int nb)
 	i = 2;
 	if (nb < 2)
 		return (0);
-	while (i <= (nb / 2))
+	while (i <= (nb / i))
 	{
 		if (nb != i && nb % i == 0)
 		{

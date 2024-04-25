@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:22:29 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/24 16:48:45 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:36:07 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	ft_sqrt(int nb)
 // 	printf("%i\n", ft_sqrt(0));
 // 	printf("%i\n", ft_sqrt(2));
 // 	printf("%i\n", ft_sqrt(1));
+// 	printf("%i\n", ft_sqrt(2147395400));
 // 	printf("%i\n", ft_sqrt(2147395600));
 // 	printf("%i\n", ft_sqrt(2147483641));
 // }

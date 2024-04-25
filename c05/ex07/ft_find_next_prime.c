@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:24:00 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/25 18:13:23 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:43:12 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ int	ft_find_next_prime(int nb)
 // 	printf("%i\n", ft_find_next_prime(0));
 // 	printf("%i\n", ft_find_next_prime(2));
 // 	printf("%i\n", ft_find_next_prime(1));
-// 	printf("%i\n", ft_find_next_prime(200));
+//  	printf("%i\n", ft_find_next_prime(2147483647));
 // }

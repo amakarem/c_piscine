@@ -6,15 +6,14 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:59:26 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/27 20:57:33 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/27 21:06:01 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
-#include <stdio.h>
 #include <unistd.h>
 
-void	trans_content(char *filename, char array[100][100], char *c);
+int	trans_content(char *filename, char array[100][100], char *c);
 void	populate_array(char array[100][100], char *c);
 void	print_content(char array[100][100]);
 
@@ -34,7 +33,7 @@ int	str_lenth(char **argv)
 	return (length);
 }
 
-void	trans_content(char *filename, char array[100][100], char *c)
+int	trans_content(char *filename, char array[100][100], char *c)
 {
 	int	fd;
 	int	sz;
@@ -42,8 +41,7 @@ void	trans_content(char *filename, char array[100][100], char *c)
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 	{
-		perror("r1");
-		return ;
+		return (0);
 	}
 
 	sz = read(fd, c, 999);
@@ -53,9 +51,9 @@ void	trans_content(char *filename, char array[100][100], char *c)
 
 	if (close(fd) < 0)
 	{
-		perror("c1");
-		return ;
+		return (0);
 	}
+	return (1);
 }
 
 void	populate_array(char array[100][100], char *c)

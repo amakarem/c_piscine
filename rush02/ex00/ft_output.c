@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checkifnumberisvalid.c                             :+:      :+:    :+:   */
+/*   ft_output.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstumpf <rstumpf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 17:25:22 by rstumpf           #+#    #+#             */
-/*   Updated: 2024/04/27 20:15:05 by rstumpf          ###   ########.fr       */
+/*   Created: 2024/04/27 20:38:43 by aelaaser          #+#    #+#             */
+/*   Updated: 2024/04/27 20:39:06 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_is_valid(char *str)
-{
-	int	counter;
+#include <unistd.h>
 
-	counter = 0;
-	while (str[counter] != '\0')
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (str[counter] < '0' || str[counter] > '9')
-		{
-			return (0);
-			counter++;
-		}
+		ft_putchar(str[i]);
+		i++;
 	}
-	return (1);
+	return (0);
 }

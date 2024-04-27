@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:17:39 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/27 21:10:50 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/27 21:48:45 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,14 @@
 int	ft_putstr(char *str);
 int	check_is_valid(char *str);
 int	trans_content(char *filename, char array[100][100], char *c);
+int	str_lenth(char *str);
 void	populate_array(char array[100][100], char *c);
 void	print_content(char array[100][100]);
+
+int	ft_convert_num(char *str)
+{
+	if (str_lenth(str) <= 100)
+}
 
 int main(int argc, char *argv[])
 {
@@ -42,9 +48,6 @@ int main(int argc, char *argv[])
 		ft_putstr("Dict Error\n");
 		return (1);
 	}
-	
-	ft_putstr(argv[input]);
-	//print_content(array);
-
+	ft_convert_num(argv[input]);
 	return (0);
 }

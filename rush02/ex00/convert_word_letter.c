@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:59:26 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/27 21:06:01 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/27 21:45:38 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,16 @@ int	trans_content(char *filename, char array[100][100], char *c);
 void	populate_array(char array[100][100], char *c);
 void	print_content(char array[100][100]);
 
-int	str_lenth(char **argv)
+int	str_lenth(char *str)
 {
-	int	length;
-	int	counter;
+	int	i;
 
-	length = 0;
-	counter = 0;
-	while (argv[1][counter] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		length++;
-		counter++;
+		i++;
 	}
-
-	return (length);
+	return (i);
 }
 
 int	trans_content(char *filename, char array[100][100], char *c)

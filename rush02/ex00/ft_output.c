@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush-02.c                                          :+:      :+:    :+:   */
+/*   ft_output.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 18:17:39 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/27 20:47:06 by aelaaser         ###   ########.fr       */
+/*   Created: 2024/04/27 20:38:43 by aelaaser          #+#    #+#             */
+/*   Updated: 2024/04/27 20:39:06 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_putstr(char *str);
-int	check_is_valid(char *str);
-
-int main(int argc, char *argv[])
+void	ft_putchar(char c)
 {
-	int	input;
+	write(1, &c, 1);
+}
 
-	input = 1;
-	if (argc == 3)
-		input = 2;
-	else if (argc < 2)
-		ft_putstr("Error\n");
-	else if (check_is_valid(argv[input]) == 0)
-		ft_putstr("Error\n");
+int	ft_putstr(char *str)
+{
+	int	i;
 
-	ft_putstr("\n\n");
-	ft_putstr(argv[input]);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 	return (0);
 }

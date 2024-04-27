@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkifnumberisvalid.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstumpf <rstumpf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:25:22 by rstumpf           #+#    #+#             */
-/*   Updated: 2024/04/27 20:15:05 by rstumpf          ###   ########.fr       */
+/*   Updated: 2024/04/27 20:46:06 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	check_is_valid(char *str)
 		if (str[counter] < '0' || str[counter] > '9')
 		{
 			return (0);
-			counter++;
 		}
+		counter++;
 	}
 	return (1);
 }

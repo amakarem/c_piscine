@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:17:39 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/27 21:06:48 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/27 21:10:50 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,18 @@ int main(int argc, char *argv[])
 		filename = argv[input];
 		input = 2;
 	}
-	else if (argc < 2)
+	if (argc < 2 || check_is_valid(argv[input]) == 0)
+	{
 		ft_putstr("Error\n");
-	else if (check_is_valid(argv[input]) == 0)
-		ft_putstr("Error\n");
+		return (1);
+	}
 	if (trans_content(filename, array, c) == 0)
+	{
 		ft_putstr("Dict Error\n");
+		return (1);
+	}
 	
+	ft_putstr(argv[input]);
 	//print_content(array);
 
 	return (0);

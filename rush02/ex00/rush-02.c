@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:17:39 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/27 21:48:45 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/27 22:32:13 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,30 @@ int	str_lenth(char *str);
 void	populate_array(char array[100][100], char *c);
 void	print_content(char array[100][100]);
 
-int	ft_convert_num(char *str)
+
+char	*ft_strcpy_rev(char *src, char *dest)
 {
-	if (str_lenth(str) <= 100)
+	char	*tmp;
+	int	i;
+	int x;
+
+	i = 0;
+	while(src[i] != '\0')
+	{
+		tmp[i] = src[i];
+		i++;
+	}
+	tmp[i] = '-';
+	i++;
+	x = 0;
+	while(dest[x] != '\0')
+	{
+		tmp[i] = dest[x];
+		i++;
+		x++;
+	}
+	tmp[i] = '\0';
+	return (tmp);
 }
 
 int main(int argc, char *argv[])
@@ -48,6 +69,6 @@ int main(int argc, char *argv[])
 		ft_putstr("Dict Error\n");
 		return (1);
 	}
-	ft_convert_num(argv[input]);
+	ft_putstr(ft_strcpy_rev("hundered", "twinty-two"));
 	return (0);
 }

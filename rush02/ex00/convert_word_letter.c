@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   convert_word_letter.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:59:26 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/27 17:43:04 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/27 20:57:33 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
-#include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
 
-void	trans_content(char array[100][100], char *c);
+void	trans_content(char *filename, char array[100][100], char *c);
 void	populate_array(char array[100][100], char *c);
 void	print_content(char array[100][100]);
 
@@ -35,12 +34,12 @@ int	str_lenth(char **argv)
 	return (length);
 }
 
-void	trans_content(char array[100][100], char *c)
+void	trans_content(char *filename, char array[100][100], char *c)
 {
 	int	fd;
 	int	sz;
 
-	fd = open("numbers.dict", O_RDONLY);
+	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 	{
 		perror("r1");
@@ -115,14 +114,14 @@ void	print_content(char array[100][100])
 	}
 }
 
-int	main(int argc, char **argv)
-{
-	char	*c;
-	char	array[100][100];
+// int	main(int argc, char **argv)
+// {
+// 	char	*c;
+// 	char	array[100][100];
 
-	c = (char *)malloc(sizeof(char) * 1000);
+// 	c = (char *)malloc(sizeof(char) * 1000);
 
-	trans_content(array, c);
-	print_content(array);
-	return (0);
-}
+// 	trans_content(array, c);
+// 	print_content(array);
+// 	return (0);
+// }

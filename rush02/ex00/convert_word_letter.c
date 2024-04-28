@@ -6,12 +6,14 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:59:26 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/28 13:14:12 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 15:04:26 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
 #include "hash_map.h"
 
 int	trans_content(char *filename, t_item **items, char *c)

@@ -6,7 +6,7 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:25:42 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/28 14:24:16 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 15:15:09 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include "hash_map.h"
 
-#define MAX_ARRAY_SIZE 63
-
-typedef struct item
-{
-	char	*key;
-	char	*value;
-	int		size;
-}	t_item;
+// typedef struct item
+// {
+// 	char	*key;
+// 	char	*value;
+// 	int		size;
+// }	t_item;
 
 int		ft_strcmp(const char *s1, const char *s2);
-t_item	*linear_search(t_item *items, int size, const char *key, int length);
+char	*linear_search(t_item **items, int size, const char *key);
 // t_item	*create_item(char *key, char *value, int size);
 char	*ft_strdup(char *src);
 void	populate_array(t_item **items, char *c);
 
-t_item	*linear_search(t_item *items, int size, const char *key, int length)
+char	*linear_search(t_item **items, int size, const char *key)
 {
 	int	counter;
 
 	counter = 0;
 	while (counter < size)
 	{
-		if (length > 0 && items[counter].size == length
-			&& ft_strcmp(items[counter].key, key) == 0)
+		if (ft_strcmp(items[counter]->key, key) == 0)
 		{
-			return (&items[counter]);
-		}
-		if (length > 0 && items[counter].size == length)
-		{
-			return (&items[counter]);
-		}
-		if (ft_strcmp(items[counter].key, key) == 0)
-		{
-			return (&items[counter]);
+			return (items[counter]->value);
 		}
 		counter++;
 	}
-	return (NULL);
+	return ("");
 }
 
 t_item	*create_item(char *key, char *value, int size)

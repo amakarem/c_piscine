@@ -6,27 +6,30 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:17:39 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/28 12:58:54 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 15:16:28 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
 #include "hash_map.h"
 
-char	core_work(char *input, t_item **items, int size)
-{
-	char	*temp;
-	int		counter;
-	int		size;
-	int		current_index_value;
-	int		current_base;
+// char	core_work(char *input, t_item **items, int size)
+// {
+// 	char	*temp;
+// 	int		counter;
+// 	int		size;
+// 	int		current_index_value;
+// 	int		current_base;
 
-	temp = str_length(input);
-	while (input)
-	{
-	}
-	return (NULL);
-}
+// 	temp = str_length(input);
+// 	while (input)
+// 	{
+// 	}
+// 	return (NULL);
+// }
 
 char	*ft_strcpy_rev(char *src, char *dest)
 {
@@ -78,7 +81,11 @@ int	main(int argc, char *argv[])
 		ft_putstr("Dict Error\n");
 		return (1);
 	}
-	core_work(argv[input], item_array, );
+	// core_work(argv[input], item_array, );
 	// ft_putstr(ft_strcpy_rev("one", "hundered-twinty-two"));
+
+	ft_putstr(linear_search(item_array, 100, "5"));
+
+
 	return (0);
 }

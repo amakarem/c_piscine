@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hash_map.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 20:36:51 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/28 15:15:20 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 19:39:31 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ char	*linear_search(t_item **items, int size, const char *key);
 char	*ft_strdup(char *src);
 void	populate_array(t_item **items, char *c);
 int		str_lenth(char *str);
+char	*nbr_to_str(int nb);
+char	*ft_strcpy_rev(char *src, char *dest);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush-02.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:17:39 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/28 15:16:28 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 20:01:01 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,44 +16,27 @@
 #include <fcntl.h>
 #include "hash_map.h"
 
-// char	core_work(char *input, t_item **items, int size)
-// {
-// 	char	*temp;
-// 	int		counter;
-// 	int		size;
-// 	int		current_index_value;
-// 	int		current_base;
-
-// 	temp = str_length(input);
-// 	while (input)
-// 	{
-// 	}
-// 	return (NULL);
-// }
-
-char	*ft_strcpy_rev(char *src, char *dest)
+void	ft_num_text(char *str, t_item **item_array, char *output)
 {
-	char	*tmp;
-	int		i;
-	int		x;
+	int len;
+	char 	temp[12];
+	char	tmptext[12];
 
-	i = 0;
-	while (src[i] != '\0')
+	len = str_lenth(str);
+	if ((len == 1) || (len == 2 && str[0] == '1')
+		|| (len == 2 && str[1] == '0'))
+		ft_putstr(linear_search(item_array, 100, str));
+	else if (len == 2)
 	{
-		tmp[i] = src[i];
-		i++;
+		temp[0] = str[0];
+		temp[1] = '0';
+		temp[2] = '\0';
+		tmptext[0] = str[1];
+		tmptext[1] = '\0';
+		output = ft_strcpy_rev(linear_search(item_array, 100, temp), linear_search(item_array, 100, tmptext));
+		ft_putstr(output);
 	}
-	tmp[i] = '-';
-	i++;
-	x = 0;
-	while (dest[x] != '\0')
-	{
-		tmp[i] = dest[x];
-		i++;
-		x++;
-	}
-	tmp[i] = '\0';
-	return (tmp);
+	ft_putstr("\n");
 }
 
 int	main(int argc, char *argv[])
@@ -61,6 +44,7 @@ int	main(int argc, char *argv[])
 	int		input;
 	char	*filename;
 	char	*c;
+	char	*output;
 	t_item	*item_array[100];
 
 	filename = "numbers.dict";
@@ -82,10 +66,9 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	// core_work(argv[input], item_array, );
-	// ft_putstr(ft_strcpy_rev("one", "hundered-twinty-two"));
-
-	ft_putstr(linear_search(item_array, 100, "5"));
-
-
+	//output = ft_strcpy_rev(linear_search(item_array, 100, "5"), "hundered-twinty-two");
+	//ft_putstr(output);
+	ft_num_text(argv[input], item_array, output);
+	//free(output);
 	return (0);
 }

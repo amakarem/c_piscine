@@ -3,28 +3,64 @@
 /*                                                        :::      ::::::::   */
 /*   rush-02.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:17:39 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/27 21:10:50 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/28 12:58:54 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "hash_map.h"
 
-int	ft_putstr(char *str);
-int	check_is_valid(char *str);
-int	trans_content(char *filename, char array[100][100], char *c);
-void	populate_array(char array[100][100], char *c);
-void	print_content(char array[100][100]);
-
-int main(int argc, char *argv[])
+char	core_work(char *input, t_item **items, int size)
 {
-	int	input;
-	char	*filename = "numbers.dict";
-	char	*c;
-	char	array[100][100];
+	char	*temp;
+	int		counter;
+	int		size;
+	int		current_index_value;
+	int		current_base;
 
+	temp = str_length(input);
+	while (input)
+	{
+	}
+	return (NULL);
+}
+
+char	*ft_strcpy_rev(char *src, char *dest)
+{
+	char	*tmp;
+	int		i;
+	int		x;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		tmp[i] = src[i];
+		i++;
+	}
+	tmp[i] = '-';
+	i++;
+	x = 0;
+	while (dest[x] != '\0')
+	{
+		tmp[i] = dest[x];
+		i++;
+		x++;
+	}
+	tmp[i] = '\0';
+	return (tmp);
+}
+
+int	main(int argc, char *argv[])
+{
+	int		input;
+	char	*filename;
+	char	*c;
+	t_item	*item_array[100];
+
+	filename = "numbers.dict";
 	c = (char *)malloc(sizeof(char) * 1000);
 	input = 1;
 	if (argc == 3)
@@ -37,14 +73,12 @@ int main(int argc, char *argv[])
 		ft_putstr("Error\n");
 		return (1);
 	}
-	if (trans_content(filename, array, c) == 0)
+	if (trans_content(filename, item_array, c) == 0)
 	{
 		ft_putstr("Dict Error\n");
 		return (1);
 	}
-	
-	ft_putstr(argv[input]);
-	//print_content(array);
-
+	core_work(argv[input], item_array, );
+	// ft_putstr(ft_strcpy_rev("one", "hundered-twinty-two"));
 	return (0);
 }

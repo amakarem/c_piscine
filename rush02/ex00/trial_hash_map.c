@@ -6,7 +6,7 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:25:42 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/27 21:38:18 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 14:24:16 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,41 +15,37 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
+#define MAX_ARRAY_SIZE 63
+
 typedef struct item
 {
 	char	*key;
 	char	*value;
+	int		size;
 }	t_item;
 
 int		ft_strcmp(const char *s1, const char *s2);
-t_item	*linear_search(t_item *items, int size, const char *key);
-t_item	*create_item(char *key, char *value);
+t_item	*linear_search(t_item *items, int size, const char *key, int length);
+// t_item	*create_item(char *key, char *value, int size);
 char	*ft_strdup(char *src);
 void	populate_array(t_item **items, char *c);
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	int	counter;
-
-	counter = 0;
-	while (s1[counter] != '\0' && s2[counter] != '\0')
-	{
-		if (s1[counter] != s2[counter])
-		{
-			return ((unsigned char)s1[counter] - (unsigned char)s2[counter]);
-		}
-		counter++;
-	}
-	return ((unsigned char)s1[counter] - (unsigned char)s2[counter]);
-}
-
-t_item	*linear_search(t_item *items, int size, const char *key)
+t_item	*linear_search(t_item *items, int size, const char *key, int length)
 {
 	int	counter;
 
 	counter = 0;
 	while (counter < size)
 	{
+		if (length > 0 && items[counter].size == length
+			&& ft_strcmp(items[counter].key, key) == 0)
+		{
+			return (&items[counter]);
+		}
+		if (length > 0 && items[counter].size == length)
+		{
+			return (&items[counter]);
+		}
 		if (ft_strcmp(items[counter].key, key) == 0)
 		{
 			return (&items[counter]);
@@ -59,7 +55,7 @@ t_item	*linear_search(t_item *items, int size, const char *key)
 	return (NULL);
 }
 
-t_item	*create_item(char *key, char *value)
+t_item	*create_item(char *key, char *value, int size)
 {
 	t_item	*new_item;
 
@@ -70,33 +66,13 @@ t_item	*create_item(char *key, char *value)
 	}
 	new_item->key = ft_strdup(key);
 	new_item->value = ft_strdup(value);
+	new_item->size = size;
 	if (new_item->key == NULL || new_item->value == NULL)
 	{
 		free(new_item);
 		return (NULL);
 	}
 	return (new_item);
-}
-
-char	*ft_strdup(char *src)
-{
-	int		src_length;
-	char	*char_array;
-
-	src_length = 0;
-	while (src[src_length] != '\0')
-		src_length++;
-	char_array = (char *) malloc(sizeof(char) * (src_length + 1));
-	if (!char_array)
-		return (NULL);
-	src_length = 0;
-	while (src[src_length] != '\0')
-	{
-		char_array[src_length] = src[src_length];
-		src_length++;
-	}
-	char_array[src_length] = '\0';
-	return ((char *)char_array);
 }
 
 void	populate_array(t_item **items, char *c)
@@ -120,10 +96,40 @@ void	populate_array(t_item **items, char *c)
 		while (c[counter] != '\n')
 			temp_value[inner_str_counter++] = c[counter++];
 		temp_value[inner_str_counter++] = '\0';
-		items[inner_counter++] = create_item(temp_key, temp_value);
+		items[inner_counter++] = create_item(temp_key, temp_value,
+				str_lenth(temp_key));
 		counter++;
 	}
 }
+
+// void	populate_array_remaing(t_item **items, int size,
+// 		int current_index, char *current_base)
+// {
+// 	int		counter;
+// 	int		inner_counter;
+// 	char	temp_key[100];
+// 	char	temp_value[100];
+// 	t_item	*item;
+
+// 	counter = 0;
+// 	inner_counter = 0;
+// 	item = linear_search(items, current_index, "100", 0);
+// 	if (ft_strcmp(current_base, "1000000000000000000000000000000000000") != 0)
+// 	{
+// 		while (counter <= 2)
+// 		{
+// 			if (counter == 0)
+// 			{
+				
+// 			}
+// 			else
+// 			{
+				
+// 			}
+// 			current_index++;
+// 		}
+// 	}
+// }
 
 // void	trans_content(t_item **items, char *c)
 // {

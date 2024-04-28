@@ -6,29 +6,13 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:59:26 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/27 22:06:36 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 13:14:12 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <unistd.h>
 #include "hash_map.h"
-
-int	str_lenth(char **argv)
-{
-	int	length;
-	int	counter;
-
-	length = 0;
-	counter = 0;
-	while (argv[1][counter] != '\0')
-	{
-		length++;
-		counter++;
-	}
-
-	return (length);
-}
 
 int	trans_content(char *filename, t_item **items, char *c)
 {
@@ -40,12 +24,9 @@ int	trans_content(char *filename, t_item **items, char *c)
 	{
 		return (0);
 	}
-
 	sz = read(fd, c, 999);
 	c[sz] = '\0';
-
 	populate_array(items, c);
-
 	if (close(fd) < 0)
 	{
 		return (0);
@@ -66,7 +47,6 @@ void	print_content(char array[100][100])
 	{
 		num_lines++;
 	}
-
 	counter = 0;
 	while (counter < num_lines)
 	{

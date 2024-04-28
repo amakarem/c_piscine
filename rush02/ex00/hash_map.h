@@ -6,7 +6,7 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 20:36:51 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/28 13:14:43 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 14:27:47 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ typedef struct item
 {
 	char	*key;
 	char	*value;
+	int		size;
 }	t_item;
 
 int		ft_putstr(char *str);

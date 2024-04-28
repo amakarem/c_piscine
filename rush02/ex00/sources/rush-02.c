@@ -6,13 +6,14 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:17:39 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/28 22:49:33 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/29 00:29:48 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include <stdio.h>
 #include "../includes/hash_map.h"
 
 char	*num_str(int n)
@@ -55,14 +56,15 @@ void	ft_num_text(char *str, t_item ***item_array, char *output)
 	}
 	else if (len >= 3)
 	{
-		tmptext[0] = str[len - 1];
-		tmptext[1] = '\0';
-		output = ft_strcpy_rev(linear_search(*item_array, 100, num_str(len)),
-				linear_search(*item_array, 100, tmptext));
 		tmptext[0] = str[0];
 		tmptext[1] = '\0';
-		output = ft_strcpy_rev(linear_search(*item_array, 100, tmptext),
-				linear_search(*item_array, 100, "output"));
+		output = ft_strcpy_rev(
+				linear_search(*item_array, 100, tmptext),
+				linear_search(*item_array, 100, num_str(len)));
+		// tmptext[0] = str[0];
+		// tmptext[1] = '\0';
+		// output = ft_strcpy_rev(linear_search(*item_array, 100, tmptext),
+		// 		linear_search(*item_array, 100, "output"));
 		ft_putstr(output);
 	}
 	ft_putstr("\n");
@@ -110,10 +112,8 @@ int	main(int argc, char *argv[])
 		ft_putstr("Dict Error\n");
 		return (1);
 	}
-	//output = ft_strcpy_rev(linear_search(item_array, 100, "5"), "hundered-twinty-two");
-	//ft_putstr(output);
 	ft_num_text(argv[input], &item_array, output);
-	// free(output);
+	free(output);
 	free_item_array(item_array, array_size);
 	return (0);
 }

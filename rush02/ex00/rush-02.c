@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush-02.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:17:39 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/28 20:01:01 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/28 21:37:47 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 #include <fcntl.h>
 #include "hash_map.h"
 
-void	ft_num_text(char *str, t_item **item_array, char *output)
+void	ft_num_text(char *str, t_item ***item_array, char *output)
 {
-	int len;
-	char 	temp[12];
+	int		len;
+	char	temp[12];
 	char	tmptext[12];
 
 	len = str_lenth(str);
 	if ((len == 1) || (len == 2 && str[0] == '1')
 		|| (len == 2 && str[1] == '0'))
-		ft_putstr(linear_search(item_array, 100, str));
+		ft_putstr(linear_search(*item_array, 100, str));
 	else if (len == 2)
 	{
 		temp[0] = str[0];
@@ -33,7 +33,8 @@ void	ft_num_text(char *str, t_item **item_array, char *output)
 		temp[2] = '\0';
 		tmptext[0] = str[1];
 		tmptext[1] = '\0';
-		output = ft_strcpy_rev(linear_search(item_array, 100, temp), linear_search(item_array, 100, tmptext));
+		output = ft_strcpy_rev(linear_search(*item_array, 100, temp),
+				linear_search(*item_array, 100, tmptext));
 		ft_putstr(output);
 	}
 	ft_putstr("\n");
@@ -42,13 +43,12 @@ void	ft_num_text(char *str, t_item **item_array, char *output)
 int	main(int argc, char *argv[])
 {
 	int		input;
+	int		array_size;
 	char	*filename;
-	char	*c;
 	char	*output;
-	t_item	*item_array[100];
+	t_item	**item_array;
 
 	filename = "numbers.dict";
-	c = (char *)malloc(sizeof(char) * 1000);
 	input = 1;
 	if (argc == 3)
 	{
@@ -60,15 +60,15 @@ int	main(int argc, char *argv[])
 		ft_putstr("Error\n");
 		return (1);
 	}
-	if (trans_content(filename, item_array, c) == 0)
+	array_size = trans_content(filename, &item_array);
+	if (array_size == 0)
 	{
 		ft_putstr("Dict Error\n");
 		return (1);
 	}
-	// core_work(argv[input], item_array, );
 	//output = ft_strcpy_rev(linear_search(item_array, 100, "5"), "hundered-twinty-two");
 	//ft_putstr(output);
-	ft_num_text(argv[input], item_array, output);
-	//free(output);
+	ft_num_text(argv[input], &item_array, output);
+	// free(output);
 	return (0);
 }

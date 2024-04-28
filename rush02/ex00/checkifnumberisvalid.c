@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   checkifnumberisvalid.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:25:22 by rstumpf           #+#    #+#             */
-/*   Updated: 2024/04/27 20:46:06 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/28 21:38:04 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
+#include "hash_map.h"
 
 int	check_is_valid(char *str)
 {

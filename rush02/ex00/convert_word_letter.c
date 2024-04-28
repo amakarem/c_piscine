@@ -6,7 +6,7 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:59:26 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/28 15:04:26 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 21:35:18 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,70 @@
 #include <fcntl.h>
 #include "hash_map.h"
 
-int	trans_content(char *filename, t_item **items, char *c)
+int	trans_content(char *filename, t_item ***items)
 {
-	int	fd;
-	int	sz;
+	int		file_descriptor;
+	int		size;
+	char	*buffer;
 
-	fd = open(filename, O_RDONLY);
-	if (fd < 0)
-	{
+	buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE);
+	file_descriptor = open(filename, O_RDONLY);
+
+	if (file_descriptor < 0)
 		return (0);
-	}
-	sz = read(fd, c, 999);
-	c[sz] = '\0';
-	populate_array(items, c);
-	if (close(fd) < 0)
-	{
-		return (0);
-	}
-	return (1);
+
+	size = read(file_descriptor, buffer, BUFFER_SIZE);
+	buffer[size] = '\0';
+
+	size = dict_size_counter(buffer);
+	*items = (t_item **)malloc(size * sizeof(t_item *));
+
+	populate_array(items, buffer);
+	close(file_descriptor);
+	free(buffer);
+	return (size);
 }
+
+int	dict_size_counter(char *c)
+{
+	int	i;
+	int	size;
+
+	i = 0;
+	size = 0;
+	while (c[i] != '\0')
+	{
+		while (c[i] == ' ')
+			i++;
+		if (c[i] == '\n')
+			size++;
+		if (c[i] == '\n' && c[i + 1] == '\n')
+			size--;
+		i++;
+	}
+
+	return (size);
+}
+
+// int	trans_content(char *filename, t_item **items, char *c)
+// {
+// 	int	fd;
+// 	int	sz;
+
+// 	fd = open(filename, O_RDONLY);
+// 	if (fd < 0)
+// 	{
+// 		return (0);
+// 	}
+// 	sz = read(fd, c, 999);
+// 	c[sz] = '\0';
+// 	populate_array(items, c);
+// 	if (close(fd) < 0)
+// 	{
+// 		return (0);
+// 	}
+// 	return (1);
+// }
 
 void	print_content(char array[100][100])
 {

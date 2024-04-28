@@ -6,7 +6,7 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:25:42 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/28 15:15:09 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 21:31:57 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_strcmp(const char *s1, const char *s2);
 char	*linear_search(t_item **items, int size, const char *key);
 // t_item	*create_item(char *key, char *value, int size);
 char	*ft_strdup(char *src);
-void	populate_array(t_item **items, char *c);
+// void	populate_array(t_item **items, char *c);
 
 char	*linear_search(t_item **items, int size, const char *key)
 {
@@ -65,7 +65,7 @@ t_item	*create_item(char *key, char *value, int size)
 	return (new_item);
 }
 
-void	populate_array(t_item **items, char *c)
+void	populate_array(t_item ***items, char *c)
 {
 	int		counter;
 	int		inner_counter;
@@ -86,7 +86,7 @@ void	populate_array(t_item **items, char *c)
 		while (c[counter] != '\n')
 			temp_value[inner_str_counter++] = c[counter++];
 		temp_value[inner_str_counter++] = '\0';
-		items[inner_counter++] = create_item(temp_key, temp_value,
+		(*items)[inner_counter++] = create_item(temp_key, temp_value,
 				str_lenth(temp_key));
 		counter++;
 	}

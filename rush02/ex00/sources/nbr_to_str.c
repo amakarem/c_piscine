@@ -6,9 +6,11 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:52:21 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/29 00:30:31 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/29 00:36:26 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 char	*nbr_to_str(int nb)
 {
@@ -18,6 +20,7 @@ char	*nbr_to_str(int nb)
 	int		x;
 
 	i = 0;
+	out = (char *)malloc(12 * sizeof(char));
 	while (nb != 0)
 	{
 		str[i] = (nb % 10) + 48;

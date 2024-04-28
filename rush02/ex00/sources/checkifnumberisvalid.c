@@ -6,12 +6,12 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:25:22 by rstumpf           #+#    #+#             */
-/*   Updated: 2024/04/28 21:38:04 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 22:44:50 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "hash_map.h"
+#include "../includes/hash_map.h"
 
 int	check_is_valid(char *str)
 {

@@ -6,15 +6,14 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:59:26 by anantony          #+#    #+#             */
-/*   Updated: 2024/04/28 21:35:18 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 22:48:50 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
-#include "hash_map.h"
+#include "../includes/hash_map.h"
 
 int	trans_content(char *filename, t_item ***items)
 {
@@ -61,26 +60,6 @@ int	dict_size_counter(char *c)
 	return (size);
 }
 
-// int	trans_content(char *filename, t_item **items, char *c)
-// {
-// 	int	fd;
-// 	int	sz;
-
-// 	fd = open(filename, O_RDONLY);
-// 	if (fd < 0)
-// 	{
-// 		return (0);
-// 	}
-// 	sz = read(fd, c, 999);
-// 	c[sz] = '\0';
-// 	populate_array(items, c);
-// 	if (close(fd) < 0)
-// 	{
-// 		return (0);
-// 	}
-// 	return (1);
-// }
-
 void	print_content(char array[100][100])
 {
 	int	counter;
@@ -107,66 +86,3 @@ void	print_content(char array[100][100])
 		counter++;
 	}
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	char	*c;
-// 	char	array[100][100];
-
-// 	c = (char *)malloc(sizeof(char) * 1000);
-
-// 	trans_content(array, c);
-// 	print_content(array);
-// 	return (0);
-// }
-
-// int	trans_content(char *filename, char array[100][100], char *c)
-// {
-// 	int	fd;
-// 	int	sz;
-
-// 	fd = open(filename, O_RDONLY);
-// 	if (fd < 0)
-// 	{
-// 		return (0);
-// 	}
-
-// 	sz = read(fd, c, 999);
-// 	c[sz] = '\0';
-
-// 	populate_array(array, c);
-
-// 	if (close(fd) < 0)
-// 	{
-// 		return (0);
-// 	}
-// 	return (1);
-// }
-
-// void	populate_array(char array[100][100], char *c)
-// {
-// 	int	counter;
-// 	int	inner_counter;
-// 	int	inner_str_counter;
-
-// 	counter = 0;
-// 	inner_counter = 0;
-// 	while (c[counter] != '\0')
-// 	{
-// 		inner_str_counter = 0;
-// 		while (c[counter] != ':')
-// 		{
-// 			array[inner_counter][inner_str_counter++] = c[counter++];
-// 		}
-// 		array[inner_counter][inner_str_counter] = '\0';
-// 		counter += 2;
-// 		inner_counter++;
-// 		inner_str_counter = 0;
-// 		while (c[counter] != '\n')
-// 		{
-// 			array[inner_counter][inner_str_counter++] = c[counter++];
-// 		}
-// 		array[inner_counter++][inner_str_counter] = '\0';
-// 		counter++;
-// 	}
-// }

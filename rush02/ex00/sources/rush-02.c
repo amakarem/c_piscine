@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   rush-02.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:17:39 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/28 22:08:05 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/04/28 22:49:33 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
-#include "hash_map.h"
+#include "../includes/hash_map.h"
 
 char	*num_str(int n)
 {
@@ -69,23 +68,20 @@ void	ft_num_text(char *str, t_item ***item_array, char *output)
 	ft_putstr("\n");
 }
 
-// void	ft_read_num(char *str, t_item ***item_array, char *output)
-// {
-// 	int	len;
-// 	int	count;
-// 	char	*c;
-// 	int		i;
+void	free_item_array(t_item **item_array, int array_size)
+{
+	int	i;
 
-// 	len = str_lenth(str);
-// 	i = 0;
-// 	while (len >= 0)
-// 	{
-// 		c[0] == str[len];
-// 		len--;
-// 		count++;
-// 	}
-// 	ft_putstr("\n");
-// }
+	i = 0;
+	while (i < array_size)
+	{
+		free(item_array[i]->key);
+		free(item_array[i]->value);
+		free(item_array[i]);
+		i++;
+	}
+	free(item_array);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -95,6 +91,7 @@ int	main(int argc, char *argv[])
 	char	*output;
 	t_item	**item_array;
 
+	output = (char *)malloc(sizeof(char) * 1000);
 	filename = "numbers.dict";
 	input = 1;
 	if (argc == 3)
@@ -117,5 +114,6 @@ int	main(int argc, char *argv[])
 	//ft_putstr(output);
 	ft_num_text(argv[input], &item_array, output);
 	// free(output);
+	free_item_array(item_array, array_size);
 	return (0);
 }

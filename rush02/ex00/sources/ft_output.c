@@ -6,12 +6,11 @@
 /*   By: anantony <anantony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 20:38:43 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/28 15:04:03 by anantony         ###   ########.fr       */
+/*   Updated: 2024/04/28 22:48:53 by anantony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
 

@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:12:11 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/05/01 14:43:10 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/05/01 14:44:34 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	ft_ultimate_range(int **range, int min, int max)
 		i++;
 	}
 	*range = array;
-	free(array);
 	return (i);
 }
 

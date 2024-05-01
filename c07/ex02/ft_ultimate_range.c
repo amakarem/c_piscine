@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:12:11 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/05/01 14:30:43 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/05/01 14:43:10 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	ft_ultimate_range(int **range, int min, int max)
 // {
 // 	int	**tab;
 // 	int	i;
-
 // 	tab = (int **)malloc(sizeof(int *));
 // 	printf("%d\n\n", ft_ultimate_range(tab, min, max));
 // 	i = 0;
@@ -53,7 +52,6 @@ int	ft_ultimate_range(int **range, int min, int max)
 // 	}
 // 	free(tab);
 // }
-
 // int	main(void)
 // {
 // 	test_ultim_range(0, 11);

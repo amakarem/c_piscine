@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 18:03:53 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/05/01 13:47:04 by aelaaser         ###   ########.fr       */
+/*   Updated: 2024/05/01 18:48:44 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strdup(char *src)
 {
 	char	*dest;
 
-	dest = malloc(ft_strlen(src) + 1);
+	dest = (char *)malloc((sizeof(char) * ft_strlen(src)) + 1);
 	if (dest == NULL)
 		return (NULL);
 	dest = ft_strcat(dest, src);

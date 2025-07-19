@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:57:14 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/15 20:06:04 by aelaaser         ###   ########.fr       */
+/*   Updated: 2025/07/19 14:47:41 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ void	ft_rev_int_tab(int *tab, int size)
 	int	i;
 
 	i = 0;
-	size = size - 1;
-	while (i < (size / 2))
+	while (i < size)
 	{
 		tmp_value = tab[i];
-		tab[i] = tab[size];
-		tab[size] = tmp_value;
+		tab[i] = tab[size - 1];
+		tab[size - 1] = tmp_value;
 		size--;
 		i++;
 	}

@@ -6,18 +6,18 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 20:08:45 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/15 20:21:33 by aelaaser         ###   ########.fr       */
+/*   Updated: 2025/07/19 14:49:33 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int	x;
+void	ft_swap(int *a, int *b);
+// {
+// 	int	x;
 
-	x = *a;
-	*a = *b;
-	*b = x;
-}
+// 	x = *a;
+// 	*a = *b;
+// 	*b = x;
+// }
 
 void	ft_sort_int_tab(int *tab, int size)
 {

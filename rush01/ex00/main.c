@@ -6,7 +6,7 @@
 /*   By: aelaaser <aelaaser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:28:20 by aelaaser          #+#    #+#             */
-/*   Updated: 2024/04/21 05:43:52 by aelaaser         ###   ########.fr       */
+/*   Updated: 2025/07/19 15:33:23 by aelaaser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,12 +112,12 @@ int	main(int argc, char	**argv)
 {
 	if (argc != 2)
 	{
-		ft_printf("ERROR\n");
+		ft_printf("Error\n");
 		return (1);
 	}
 	else if (ft_validate(ft_format(argv[1], g_in), g_in) != 16)
 	{
-		ft_printf("ERROR\n");
+		ft_printf("Error\n");
 		return (1);
 	}
 	ft_solve_col_4();
